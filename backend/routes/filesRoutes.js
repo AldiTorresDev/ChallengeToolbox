@@ -1,13 +1,12 @@
-import router from "express";
-import getAllFilesData from "../controllers/fileController.js";
+import router from 'express'
+import getAllFilesData from '../controllers/fileController.js'
 
-const filesRouter = router();
+const filesRouter = router()
 
-filesRouter.get("/data", getAllFilesData);
+filesRouter.get('/data', getAllFilesData)
 
-filesRouter.get("/list", (req, res) => {
-  res.send("list");
-});
+filesRouter.get('/list', (req, res) => {
+  res.send('list')
+})
 
-export default filesRouter;
-
+export default filesRouter

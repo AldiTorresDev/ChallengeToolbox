@@ -1,6 +1,8 @@
 import { Table, Container } from 'react-bootstrap'
 import { useEffect, useState } from 'react'
 
+const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+
 function Content () {
   const [files, setFiles] = useState([])
 
@@ -20,7 +22,7 @@ function Content () {
   }
   
   useEffect(() => {
-    fetch('http://localhost:3001/files/data')
+    fetch(`${apiUrl}/files/data`)
       .then(response => response.json())
       .then(data => setFiles(transformData(data)))
       .catch(error => console.error('Error fetching data:', error))

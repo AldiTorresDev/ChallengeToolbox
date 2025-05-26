@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend:/usr/src/app
+    environment:
+      - NODE_ENV=development
+
+  frontend:
+    build:
+      context: ./frontend/challenge-app
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend/challenge-app:/usr/src/app
+      - /usr/src/app/node_modules  # Esto evita que los node_modules locales sobrescriban los del contenedor
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - api
+

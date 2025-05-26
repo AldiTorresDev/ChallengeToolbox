@@ -1,12 +1,10 @@
 import router from 'express'
-import getAllFilesData from '../controllers/fileController.js'
+import { getAllFilesData, getAllFilesList } from '../controllers/fileController.js'
 
 const filesRouter = router()
 
 filesRouter.get('/data', getAllFilesData)
 
-filesRouter.get('/list', (req, res) => {
-  res.send('list')
-})
+filesRouter.get('/list', getAllFilesList)
 
 export default filesRouter

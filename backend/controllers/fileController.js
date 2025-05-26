@@ -87,4 +87,29 @@ const getAllFilesData = async (req, res) => {
   }
 }
 
-export default getAllFilesData
+/**
+ * Obtiene la lista de archivos disponibles
+ * @async
+ * @function getAllFilesList
+ * @param {import('express').Request} req - Objeto de solicitud de Express
+ * @param {import('express').Response} res - Objeto de respuesta de Express
+ * @returns {Promise<void>} No retorna valor explícito, pero envía una respuesta HTTP
+ *
+ * @description
+ * Este controlador retorna la lista de archivos disponibles
+ *
+ * @throws {Error} Puede lanzar errores en caso de fallos en la API externa o procesamiento
+ */
+const getAllFilesList = async (req, res) => {
+  try {
+    const filesNamesList = await getFilesList()
+    res.status(200).json({ files: filesNamesList })
+  } catch (error) {
+    console.error('⚠️ Error al obtener la lista de archivos:', error)
+    res.status(500).json({
+      error: 'Error interno del servidor al obtener la lista de archivos'
+    })
+  }
+}
+
+export { getAllFilesData, getAllFilesList }

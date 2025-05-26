@@ -1,6 +1,8 @@
 # Dependencias
 backend/node_modules/
 frontend/node_modules/
+backend/package-lock.json
+frontend/challenge-app/package-lock.json 
 
 # Archivos de entorno
 .env

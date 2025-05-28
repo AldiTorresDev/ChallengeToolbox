@@ -103,7 +103,7 @@ docker-compose restart
 
 ## 🧪 Testing
 
-Para ejecutar los tests del backend, se puede usar el siguiente comando:
+Para ejecutar los tests del backend, tienes dos opciones:
 
 ### Opción 1: Dentro del contenedor
 

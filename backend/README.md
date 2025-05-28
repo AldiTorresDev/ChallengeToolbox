@@ -31,7 +31,7 @@ Obtiene y transforma los datos de los archivos CSV disponibles.
 
 #### Posibles Errores
 
-- `404 Not Found`: 
+- `404 Not Found`:
   - Cuando no se encuentran archivos disponibles
   - Cuando el archivo solicitado no existe
   - Cuando no hay archivos con datos válidos

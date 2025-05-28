@@ -9,6 +9,7 @@ services:
       - "3000:3000"
     volumes:
       - ./backend:/usr/src/app
+      - /usr/src/app/node_modules  # Esto evita que los node_modules locales sobrescriban los del contenedor
     environment:
       - NODE_ENV=development
 

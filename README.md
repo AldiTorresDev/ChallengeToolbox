@@ -20,7 +20,8 @@ ChallengeToolbox/
 │ ├── .dockerignore
 │ ├── app.js
 │ ├── Dockerfile
-│ └── package.json
+│ ├── package.json
+│ └── README.md 
 │
 ├── frontend/
 │ └── challenge-app/ # React + Vite
@@ -32,7 +33,8 @@ ChallengeToolbox/
 │   ├── Dockerfile
 │   ├── index.html
 │   ├── package.json
-│   └── vite.config.js
+│   ├── vite.config.js
+│   └── README.md 
 │
 ├── .gitignore
 ├── docker-compose.yml
@@ -61,7 +63,7 @@ cd ChallengeToolbox
 
 ```bash
 cd backend
-echo "EXTERNAL_API_KEY={clave de la API externa}" > .env
+echo "EXTERNAL_API_KEY=CLAVE_API_EXTERNA" > .env  # Reemplaza CLAVE_API_EXTERNA con la clave de la API externa
 cd ..
 ```
 
@@ -94,6 +96,8 @@ docker-compose restart
 ```
 
 ## 📝 Notas de desarrollo
+
+- Cada aplicación (backend y frontend) tiene su propio README.md más detallado.
 
 - El backend escucha en el puerto 3000
 

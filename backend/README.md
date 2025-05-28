@@ -25,7 +25,8 @@ Obtiene y transforma los datos de los archivos CSV disponibles.
         "hex": "0123456789abcdef0123456789abcdef"
       }
     ]
-  }
+  },
+  // ...
 ]
 ```
 
@@ -93,7 +94,7 @@ npm test
 Para ejecutar la API usando Docker:
 
 ```bash
-docker-compose up
+docker-compose up api
 ```
 
 El servicio estará disponible en `http://localhost:3000`

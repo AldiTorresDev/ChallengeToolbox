@@ -1,13 +1,13 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
 const initialState = {
   filesList: [],
   filesLoading: true,
   filesError: null
-};
+}
 
 const transformData = (data) => {
-  let transformedData = []
+  const transformedData = []
   data.forEach(item => {
     item.lines.forEach(line => {
       transformedData.push({
@@ -23,13 +23,13 @@ const transformData = (data) => {
 
 export const fetchFiles = createAsyncThunk('files/fetchFiles', async (fileName, { rejectWithValue }) => {
   try {
-    let url = `http://localhost:3000/files/data`
+    let url = 'http://localhost:3000/files/data'
     if (fileName) {
-        url += `?fileName=${fileName}`
+      url += `?fileName=${fileName}`
     }
     const response = await fetch(url)
     const rawData = await response.json()
-    if(!response.ok) {
+    if (!response.ok) {
       return rejectWithValue(rawData.error)
     }
 
@@ -39,28 +39,26 @@ export const fetchFiles = createAsyncThunk('files/fetchFiles', async (fileName, 
   }
 })
 
-
-
 const filesSlice = createSlice({
-  name: "files",
+  name: 'files',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchFiles.pending, (state) => {
-        state.filesLoading = true;
+        state.filesLoading = true
       })
       .addCase(fetchFiles.fulfilled, (state, action) => {
         state.filesError = null
-        state.filesLoading = false;
-        state.filesList = action.payload;
+        state.filesLoading = false
+        state.filesList = action.payload
       })
       .addCase(fetchFiles.rejected, (state, action) => {
         console.log('action:', action)
-        state.filesLoading = false;
-        state.filesError = action.payload || 'Error desconocido al cargar los archivos';
+        state.filesLoading = false
+        state.filesError = action.payload || 'Error desconocido al cargar los archivos'
       })
-  },
-});
+  }
+})
 
-export default filesSlice.reducer;
+export default filesSlice.reducer

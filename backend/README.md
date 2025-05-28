@@ -67,11 +67,14 @@ Los datos de los archivos CSV son validados según las siguientes reglas:
    - text
    - number
    - hex
+  Si no cumple con la estructura, el archivo se ignora.
 
 2. Validaciones por campo:
+   - `file`: Debe ser una cadena de texto no vacía
    - `text`: Debe ser una cadena de texto no vacía
    - `number`: Debe ser un número válido
-   - `hex`: Debe ser un hexadecimal de 32 dígitos
+   - `hex`: Debe ser una cadena de caracteres que represente un valor hexadecimal de 32 dígitos
+  Si una linea no cumple con la validación, se ignora.  
 
 ## Desarrollo
 

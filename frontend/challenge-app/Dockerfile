@@ -3,7 +3,7 @@ FROM node:16-alpine
 WORKDIR /usr/src/app
 
 # Copiar solo los archivos de dependencias
-COPY package.json package-lock.json ./
+COPY package.json ./
 
 # Limpiar caché de npm y eliminar node_modules si existe
 RUN rm -rf node_modules && \

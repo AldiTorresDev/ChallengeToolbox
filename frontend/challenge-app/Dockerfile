@@ -8,7 +8,7 @@ COPY package.json ./
 # Limpiar caché de npm y eliminar node_modules si existe
 RUN rm -rf node_modules && \
     npm cache clean --force && \
-    npm ci
+    npm i
 
 # Copiar el resto de los archivos del proyecto
 COPY . .
